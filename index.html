@@ -3,257 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>북촌레인스쿠키 | 행운 뽑기</title>
+<title>행운 뽑기 · GRAINS COOKIE 북촌</title>
 <style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-    background: linear-gradient(160deg, #f7f1e6 0%, #efe3d0 50%, #e7d8bf 100%);
-    color: #5a4632;
-    display: flex;
-    justify-content: center;
-    padding: 32px 16px 60px;
-  }
-  .wrap {
-    width: 100%;
-    max-width: 460px;
-  }
-  .header {
-    text-align: center;
-    margin-bottom: 28px;
-  }
-  .logo {
-    font-size: 40px;
-    margin-bottom: 6px;
-  }
-  .brand {
-    font-size: 14px;
-    letter-spacing: 2px;
-    color: #a98a5b;
-    font-weight: 600;
-  }
-  h1 {
-    font-size: 24px;
-    margin: 8px 0 4px;
-    color: #5a4632;
-  }
-  .desc {
-    font-size: 13.5px;
-    color: #8a7456;
-    line-height: 1.6;
-  }
-  .card-panel {
-    background: #fffaf2;
-    border: 1px solid #e6d7bd;
-    border-radius: 20px;
-    padding: 26px 22px;
-    box-shadow: 0 8px 24px rgba(160, 130, 80, 0.12);
-  }
-  .step {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    color: #a98a5b;
-    font-weight: 700;
-    margin-bottom: 14px;
-  }
-  .step span.num {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #d8b984;
-    color: #fff;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .review-btn {
-    display: block;
-    width: 100%;
-    padding: 14px;
-    border-radius: 14px;
-    border: none;
-    background: linear-gradient(135deg, #d8b984, #c79f63);
-    color: #fff;
-    font-size: 15px;
-    font-weight: 700;
-    text-decoration: none;
-    text-align: center;
-    box-shadow: 0 6px 16px rgba(199, 159, 99, 0.35);
-  }
-  .review-btn:active { transform: scale(0.98); }
-  .divider {
-    margin: 24px 0;
-    border-top: 1px dashed #e0cfae;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 16px;
-  }
-  .cell {
-    position: relative;
-    aspect-ratio: 1 / 1;
-    border-radius: 14px;
-    background: linear-gradient(145deg, #f1e3c8, #e3cda0);
-    border: 1px solid #e0cfae;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    cursor: pointer;
-    user-select: none;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .cell:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(160,130,80,0.2); }
-  .cell.disabled { cursor: default; opacity: 0.45; }
-  .cell.opened {
-    background: #fffaf2;
-    border-color: #d8b984;
-  }
-  .cell .cookie {
-    transition: opacity 0.2s ease;
-  }
-  .locked-msg {
-    text-align: center;
-    font-size: 13px;
-    color: #b08c54;
-    margin-top: 10px;
-    display: none;
-  }
-  .result {
-    margin-top: 22px;
-    text-align: center;
-    display: none;
-  }
-  .result.show { display: block; }
-  .result .badge {
-    display: inline-block;
-    padding: 8px 16px;
-    border-radius: 999px;
-    background: #5a4632;
-    color: #fffaf2;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .result .prize {
-    font-size: 22px;
-    font-weight: 800;
-    color: #a9722e;
-    margin-bottom: 6px;
-  }
-  .result .note {
-    font-size: 12.5px;
-    color: #8a7456;
-    line-height: 1.6;
-  }
-  .footer {
-    text-align: center;
-    margin-top: 26px;
-    font-size: 11.5px;
-    color: #b3a280;
-    line-height: 1.7;
-  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #FAF5EC; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 2rem 1rem; }
+  .wrap { max-width: 420px; width: 100%; text-align: center; }
+  .brand { font-size: 13px; color: #8B7355; letter-spacing: 0.15em; margin-bottom: 0.3rem; }
+  .title { font-size: 26px; font-weight: 500; color: #2C1A0E; margin-bottom: 0.3rem; font-family: Georgia, serif; }
+  .subtitle { font-size: 14px; color: #8B7355; margin-bottom: 1.75rem; }
+
+  .review-box { background: #fff; border: 0.5px solid #E2D5C0; border-radius: 16px; padding: 1.1rem 1.25rem; margin-bottom: 1.75rem; text-align: left; }
+  .review-box-title { font-size: 14px; font-weight: 500; color: #2C1A0E; margin-bottom: 0.25rem; }
+  .review-box-desc { font-size: 12px; color: #8B7355; margin-bottom: 0.75rem; }
+  .review-boost { font-size: 12px; color: #8B6914; background: #FAF0D0; border-radius: 4px; padding: 3px 8px; display: inline-block; margin-bottom: 0.85rem; }
+  .review-actions { display: flex; gap: 8px; }
+  .btn-review-link { flex: 1; background: #3C2A1A; color: #F5EDD8; border: none; border-radius: 10px; padding: 0.65rem 1rem; font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none; display: block; text-align: center; }
+  .btn-review-link:hover { background: #2C1A0E; }
+  .btn-review-done { flex: 1; background: transparent; color: #aaa; border: 0.5px solid #ddd; border-radius: 10px; padding: 0.65rem 1rem; font-size: 13px; cursor: not-allowed; }
+  .btn-review-done.active { cursor: pointer; color: #8B6914; border-color: #C9A84C; }
+  .btn-review-done.active:hover { background: #FAF0D0; }
+  .review-done-badge { display: none; font-size: 12px; color: #3B6D11; background: #EAF3DE; border-radius: 4px; padding: 4px 10px; margin-top: 0.6rem; }
+  .review-done-badge.show { display: inline-block; }
+
+  .machine-wrap { margin: 0 auto 1.75rem; width: 240px; cursor: pointer; user-select: none; }
+  .machine-wrap:active { transform: scale(0.97); }
+
+  .result-card { display: none; background: #fff; border: 0.5px solid #E2D5C0; border-radius: 16px; padding: 2rem 1.5rem; margin: 0 auto 1.5rem; max-width: 320px; }
+  .result-card.show { display: block; animation: resultIn 0.4s ease; }
+  .result-emoji { font-size: 52px; display: block; margin-bottom: 0.75rem; }
+  .result-rank { font-size: 13px; color: #8B7355; margin-bottom: 0.4rem; letter-spacing: 0.08em; }
+  .result-prize { font-size: 22px; font-weight: 500; color: #2C1A0E; margin-bottom: 0.5rem; }
+  .result-desc { font-size: 13px; color: #8B7355; }
+  .first { border: 2px solid #C9A84C; }
+  .second { border: 2px solid #A8A8A8; }
+
+  .btn-spin { background: #3C2A1A; color: #F5EDD8; border: none; border-radius: 10px; padding: 0.85rem 2rem; font-size: 16px; font-weight: 500; cursor: pointer; width: 100%; max-width: 240px; margin-bottom: 0.75rem; }
+  .btn-spin:hover { background: #2C1A0E; }
+  .btn-spin:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-reset { background: transparent; color: #8B7355; border: 0.5px solid #D4C4A8; border-radius: 10px; padding: 0.65rem 2rem; font-size: 14px; cursor: pointer; width: 100%; max-width: 240px; display: none; }
+  .btn-reset.show { display: block; margin: 0 auto; }
+
+  .prizes-info { margin-top: 2rem; border-top: 0.5px solid #E2D5C0; padding-top: 1.5rem; }
+  .prizes-info-title { font-size: 11px; color: #aaa; letter-spacing: 0.1em; margin-bottom: 1rem; text-transform: uppercase; }
+  .prize-row { display: flex; align-items: center; justify-content: space-between; padding: 0.55rem 0; border-bottom: 0.5px solid #F0E8D8; }
+  .prize-row:last-child { border-bottom: none; }
+  .prize-label { font-size: 13px; color: #2C1A0E; }
+  .prize-prob { font-size: 12px; color: #aaa; }
+  .prize-prob.boosted { color: #8B6914; font-weight: 500; }
+
+  @keyframes shake { 0%,100%{transform:rotate(0)} 20%{transform:rotate(-8deg)} 40%{transform:rotate(8deg)} 60%{transform:rotate(-5deg)} 80%{transform:rotate(5deg)} }
+  @keyframes resultIn { 0%{transform:scale(0.85);opacity:0} 100%{transform:scale(1);opacity:1} }
+  .shake { animation: shake 0.55s ease; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="header">
-    <div class="logo">🍪</div>
-    <div class="brand">BUKCHON RAIN COOKIE</div>
-    <h1>북촌레인스쿠키 행운 뽑기</h1>
-    <div class="desc">리뷰 남기고, 오늘의 행운 쿠키를 뽑아보세요!</div>
-  </div>
+  <p class="brand">GRAINS COOKIE · 북촌</p>
+  <h1 class="title">행운 뽑기</h1>
+  <p class="subtitle">캡슐을 돌려 행운을 잡아보세요</p>
 
-  <div class="card-panel">
-    <div class="step"><span class="num">1</span> 구글 리뷰 남기기</div>
-    <a id="reviewBtn" class="review-btn" href="https://g.page/r/CY1AVLi5ondnEBM/review" target="_blank" rel="noopener">⭐ 구글 리뷰 작성하러 가기</a>
-
-    <div class="divider"></div>
-
-    <div class="step"><span class="num">2</span> 쿠키 박스를 골라 뽑기 참여</div>
-    <div class="grid" id="grid"></div>
-    <div class="locked-msg" id="lockedMsg">오늘은 이미 뽑기에 참여하셨어요. 내일 다시 도전해 주세요 🍪</div>
-
-    <div class="result" id="result">
-      <div class="badge">당첨 결과</div>
-      <div class="prize" id="prizeText"></div>
-      <div class="note">매장 직원에게 화면을 보여주시면 혜택을 받을 수 있어요.</div>
+  <div class="review-box">
+    <p class="review-box-title">구글 리뷰 작성하고 당첨 확률 UP!</p>
+    <p class="review-box-desc">리뷰를 작성하면 1등 확률이 5% → 15%로 올라가요</p>
+    <span class="review-boost">⭐ 1등 확률 3배 상승</span>
+    <div class="review-actions">
+      <a class="btn-review-link" href="https://g.page/r/CY1AVLi5ondnEBM/review" target="_blank" onclick="onReviewLinkClick()">구글 리뷰 작성하기</a>
+      <button class="btn-review-done" id="btnReviewDone" onclick="onReviewDone()" disabled>작성 완료</button>
     </div>
+    <span class="review-done-badge" id="reviewDoneBadge">✓ 확률 상승 적용됨</span>
   </div>
 
-  <div class="footer">
-    하루 1회 참여 가능합니다 · 매장 방문 시 화면 캡처 또는 직접 보여주세요<br>
-    북촌레인스쿠키
+  <div class="machine-wrap" id="machine" onclick="spin()">
+    <svg width="240" height="280" viewBox="0 0 240 280" xmlns="http://www.w3.org/2000/svg">
+      <rect x="30" y="20" width="180" height="180" rx="90" fill="#F5EDD8" stroke="#D4B896" stroke-width="2"/>
+      <rect x="40" y="30" width="160" height="160" rx="80" fill="#FAF5EC" stroke="#E8D5B0" stroke-width="1"/>
+      <circle cx="120" cy="110" r="50" fill="#F0E6D0" stroke="#C9A070" stroke-width="1.5"/>
+      <ellipse cx="120" cy="135" rx="50" ry="15" fill="#D4956A" opacity="0.25"/>
+      <circle cx="120" cy="135" r="50" fill="#E8C49A" stroke="#C9A070" stroke-width="1.5"/>
+      <text x="120" y="118" text-anchor="middle" font-size="30">🍪</text>
+      <text x="120" y="150" text-anchor="middle" font-size="11" fill="#8B6914" font-weight="500">PRESS TO SPIN</text>
+      <rect x="85" y="200" width="70" height="28" rx="8" fill="#3C2A1A"/>
+      <text x="120" y="219" text-anchor="middle" font-size="11" fill="#F5EDD8" font-weight="500">돌리기</text>
+      <rect x="97" y="228" width="46" height="36" fill="#5C4033"/>
+      <rect x="82" y="263" width="76" height="10" rx="4" fill="#3C2A1A"/>
+    </svg>
+  </div>
+
+  <div class="result-card" id="resultCard">
+    <span class="result-emoji" id="resultEmoji"></span>
+    <p class="result-rank" id="resultRank"></p>
+    <p class="result-prize" id="resultPrize"></p>
+    <p class="result-desc" id="resultDesc"></p>
+  </div>
+
+  <button class="btn-spin" id="spinBtn" onclick="spin()">행운 뽑기 시작</button>
+  <button class="btn-reset" id="resetBtn" onclick="reset()">다시 뽑기</button>
+
+  <div class="prizes-info">
+    <p class="prizes-info-title">경품 안내</p>
+    <div class="prize-row">
+      <span class="prize-label">🥇 1등 · 음료 무료 제공</span>
+      <span class="prize-prob" id="prob1">5%</span>
+    </div>
+    <div class="prize-row">
+      <span class="prize-label">🥈 2등 · 리워드 (미정)</span>
+      <span class="prize-prob" id="prob2">10%</span>
+    </div>
+    <div class="prize-row">
+      <span class="prize-label">🎁 3등 · 부채 증정</span>
+      <span class="prize-prob" id="prob3">85%</span>
+    </div>
   </div>
 </div>
 
 <script>
-  const PRIZES = [
-    "쿠키 1개 무료",
-    "전 메뉴 10% 할인",
-    "아메리카노 무료",
-    "쿠키 2개 무료",
-    "다음 기회에 😢",
-    "음료 사이즈업",
-    "쿠키 1개 무료",
-    "다음 기회에 😢",
-    "전 메뉴 15% 할인"
-  ];
+let reviewClicked = false, reviewDone = false, spinning = false, done = false;
 
-  const STORAGE_KEY = "grainsLuckyLastPlay";
+function onReviewLinkClick() {
+  reviewClicked = true;
+  const btn = document.getElementById('btnReviewDone');
+  btn.classList.add('active');
+  btn.disabled = false;
+}
 
-  function todayStr() {
-    const d = new Date();
-    return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
-  }
+function onReviewDone() {
+  if (!reviewClicked) return;
+  reviewDone = true;
+  document.getElementById('reviewDoneBadge').classList.add('show');
+  document.getElementById('btnReviewDone').textContent = '✓ 완료';
+  document.getElementById('btnReviewDone').disabled = true;
+  document.getElementById('prob1').textContent = '15%';
+  document.getElementById('prob1').classList.add('boosted');
+  document.getElementById('prob3').textContent = '75%';
+}
 
-  function shuffle(arr) {
-    const a = arr.slice();
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-  }
+const prizes = [
+  { rank: '1등 당첨 🎉', prize: '음료 무료 제공', desc: '매장 직원에게 이 화면을 보여주세요', emoji: '🥇', cls: 'first' },
+  { rank: '2등 당첨', prize: '리워드 증정', desc: '매장 직원에게 이 화면을 보여주세요', emoji: '🥈', cls: 'second' },
+  { rank: '3등 당첨', prize: '부채 증정', desc: '북촌 한정 기념 부채입니다. 매장에서 수령해주세요', emoji: '🎁', cls: 'third' }
+];
 
-  const grid = document.getElementById("grid");
-  const lockedMsg = document.getElementById("lockedMsg");
-  const result = document.getElementById("result");
-  const prizeText = document.getElementById("prizeText");
+function spin() {
+  if (spinning || done) return;
+  spinning = true;
+  document.getElementById('spinBtn').disabled = true;
+  const machine = document.getElementById('machine');
+  machine.classList.add('shake');
+  setTimeout(() => machine.classList.remove('shake'), 550);
+  setTimeout(() => {
+    const r = Math.random();
+    const [p1, p2] = reviewDone ? [0.15, 0.25] : [0.05, 0.15];
+    const prize = r < p1 ? prizes[0] : r < p2 ? prizes[1] : prizes[2];
+    document.getElementById('resultEmoji').textContent = prize.emoji;
+    document.getElementById('resultRank').textContent = prize.rank;
+    document.getElementById('resultPrize').textContent = prize.prize;
+    document.getElementById('resultDesc').textContent = prize.desc;
+    const card = document.getElementById('resultCard');
+    card.className = 'result-card show ' + prize.cls;
+    machine.style.display = 'none';
+    document.getElementById('spinBtn').style.display = 'none';
+    document.getElementById('resetBtn').classList.add('show');
+    spinning = false; done = true;
+  }, 900);
+}
 
-  const alreadyPlayed = localStorage.getItem(STORAGE_KEY) === todayStr();
-  const order = shuffle(PRIZES);
-  let played = alreadyPlayed;
-
-  order.forEach((prize) => {
-    const cell = document.createElement("div");
-    cell.className = "cell" + (played ? " disabled" : "");
-    cell.innerHTML = '<span class="cookie">🍪</span>';
-    cell.addEventListener("click", () => {
-      if (played) return;
-      played = true;
-      localStorage.setItem(STORAGE_KEY, todayStr());
-
-      document.querySelectorAll(".cell").forEach((c) => c.classList.add("disabled"));
-      cell.classList.add("opened");
-      cell.innerHTML = '<span class="cookie">🎉</span>';
-
-      prizeText.textContent = prize;
-      result.classList.add("show");
-    });
-    grid.appendChild(cell);
-  });
-
-  if (alreadyPlayed) {
-    lockedMsg.style.display = "block";
-  }
+function reset() {
+  done = false;
+  document.getElementById('resultCard').className = 'result-card';
+  document.getElementById('machine').style.display = 'block';
+  document.getElementById('spinBtn').style.display = 'block';
+  document.getElementById('spinBtn').disabled = false;
+  document.getElementById('resetBtn').classList.remove('show');
+}
 </script>
 </body>
 </html>
